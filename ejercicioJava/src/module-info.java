@@ -6,4 +6,5 @@
  *
  */
 module ejercicioJava {
+	requires java.desktop;
 }
