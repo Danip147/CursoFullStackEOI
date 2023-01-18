@@ -98,13 +98,65 @@ public class HolaMundo {
 		
 		System.out.println(12 > 20); // false
 		System.out.println(12 < 20); // true
+		// Condiciones comparación <,>,<=,>=, ==, !=, <> 
+		
+		int num1 = 10;
+		int num2 = 30;
+		boolean c1 = 10<20; //true
+		boolean c2 = 10>20; //false
+		boolean c3 = 10<=20; //true
+		boolean c4 = 10>=20; //false
+		boolean c5 = 10==20; //false
+		boolean c6 = 10!=20; //true
+		
+		//Comparando cadenas 
+		String cadena1 = "hola";
+		String cadena2 = "adiós";
+		String cadena3 = "hola";
+		String cadena4 = "Hola";
+		
+		System.out.println(cadena1.equals(cadena2)); // false
+		System.out.println(cadena1.equals(cadena3)); // true
+		System.out.println(cadena1.equals(cadena4)); // false
+		
+		boolean cadenaIguales = cadena1.equals(cadena2); //false
+		
+		// comparando numeros
+		int n1 = 5; 
+		double n2 = 5.0;
+		double n3 = 5.2;
+		System.out.println(n1 == n2);// true
+		System.out.println(n1 == n3);// false
+		System.out.println((11/2) == n1); // true
+		System.out.println((11.0/2) == n1); // true tiene que tener decimales uno de los 2
+		//resto division
+		System.out.println((11%2) == 1); // true
+		System.out.println((11%2) == 0); // false
+		
+	}
+	
+	public static void tablasVerdad() {
+		
+		int edad = 25;
+		int anyosCarnet = 6;
+		String sexo = "Masculino";
+		String nombre = "Pepe";
+		
+		boolean esPepeMayor = edad >= 18 && nombre.equals("Pepe");
+		System.out.println(esPepeMayor); // true
+		 
+		boolean tieneDescuento = (sexo.equals("Masculino") && anyosCarnet > 10) || (sexo.equals("Femenino") && 
+		anyosCarnet > 5);
+		System.out.println(tieneDescuento); // false
+		
 	}
 	
 	public static void main(String[] args) {
 		// ejemplosComentarios();
 		// ejemplosTipos1();
 		//ejemplosString();
-		ejemplosBoolean();
+		//ejemplosBoolean();
+		tablasVerdad();
 	}
 
 }
