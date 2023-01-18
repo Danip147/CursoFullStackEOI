@@ -153,12 +153,48 @@ public class HolaMundo {
 		System.out.println(estoQueDa);
 	}
 	
+	public static void ejemplosIncrementosDecrementos() {
+		int numero = 10;
+		
+		// pre-incremento
+		++numero;
+		System.out.println(numero); // 11
+		//post-incremento
+		numero++;
+		System.out.println(numero); // 12
+		
+		//pre-decremento
+		--numero;
+		System.out.println(numero); // 11
+		//post-decremento
+		numero--;
+		System.out.println(numero); // 10
+		///LO IMPORTANTE ES EL MOMENTOS QUE INCREMENTA  O DECREMENTA
+		
+		System.out.println(++numero); // 11 y el número = 11
+		System.out.println(numero++); // 11 y el número = 12
+		System.out.println(numero); // 12
+		
+		System.out.println(++numero+numero++); // (13 + 13) ? 26
+		System.out.println(numero); // ? 14
+		
+		int n2 = ++numero; // n2 = 15; numero = 15
+		System.out.println("n2 = " + n2 + " numero = " + numero);
+		
+		int n3 = numero++; // n2 = 15; numero = 15
+		System.out.println("n2 = " + n3 + " numero = " + numero);
+	
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		// ejemplosComentarios();
 		// ejemplosTipos1();
 		//ejemplosString();
 		//ejemplosBoolean();
-		tablasVerdad();
+		//tablasVerdad();
+		ejemplosIncrementosDecrementos();
 	}
 
 }
