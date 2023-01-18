@@ -149,6 +149,8 @@ public class HolaMundo {
 		anyosCarnet > 5);
 		System.out.println(tieneDescuento); // false
 		
+		boolean estoQueDa = sexo.equals("Masculino") || anyosCarnet > 5 && nombre.equals("Dani") ;
+		System.out.println(estoQueDa);
 	}
 	
 	public static void main(String[] args) {
