@@ -14,9 +14,8 @@ package ejercicio3;
 public class Ejercicio3 {
 
 	public static void comparacionNumeros() {
-		int num1 = 15;
-		int num2 = 7;
-
+		int num1 = 15, num2 = 15;
+		
 		System.out.println(num1 + " es menor que " + num2 + ": " + (num1 < num2));
 		System.out.println(num1 + " es igual que " + num2 + ": " + (num1 == num2));
 		System.out.println(num1 + " es mayor o igual que " + num2 + ": " + (num1 >= num2));
