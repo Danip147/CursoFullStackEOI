@@ -15,6 +15,7 @@ package ejercicio5;
 public class Ejercicio5 {
 
 	public static void operacionN() {
+		// No es una solución correcta
 		int num1 = 1;
 
 		System.out.println("Valor inicial de N = " + num1);
@@ -24,8 +25,28 @@ public class Ejercicio5 {
 
 	}
 
+	public static void solucionProfe() {
+		
+		// Para incremetar un valor hacer falta un = 
+		// Hay que ir actualizando
+		int N = 1;
+
+		System.out.println("Valor inicial de N = " + N);
+		// N = N + 77; // N = 78
+		N += 77; // N = 78
+		System.out.println("N + 77 = " + N);
+		// N = N - 3; // N = 73
+		N -= 3; // N = 73
+		System.out.println("N - 3 = " + N);
+		// N = N * 2; // N = 150
+		N *= 2; // N = 150
+		System.out.println("N * 2 = " + N);
+
+	}
+
 	public static void main(String[] args) {
-		operacionN();
+		// operacionN();
+		solucionProfe();
 
 	}
 
