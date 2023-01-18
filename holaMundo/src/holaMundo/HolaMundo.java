@@ -186,6 +186,33 @@ public class HolaMundo {
 	
 	}
 	
+	public static void ejemplosConstantes() {
+
+		
+		
+		final int IVA = 21;
+		final double IVA_2= 0.21;
+		double precioVaquero = 50;
+		System.out.println("El precio final es: " + (precioVaquero *(1+(IVA/100.0))));
+		System.out.println("El precio final es: " + (precioVaquero *(1+ IVA_2)));
+		
+	}
+	
+	public static void ejemplosConversionesNumeroCadenas() {
+		int numero = 10;
+		String cadena = "11";
+		System.out.println(cadena+numero);
+		// Convertir cadena a número
+		System.out.println(Integer.parseInt(cadena)+numero);
+		
+		// Convertir de numero a cadena
+		int prefijo = 34;
+		int telefono = 6666666;
+		System.out.println(prefijo+telefono); //6666666700 quita las suma
+		System.out.println(""+prefijo+telefono); //3466666700
+		System.out.println(String.valueOf(prefijo)+telefono); //3466666700
+		System.out.println("00"+prefijo + "-" + telefono);
+	}
 	
 	
 	public static void main(String[] args) {
@@ -194,7 +221,9 @@ public class HolaMundo {
 		//ejemplosString();
 		//ejemplosBoolean();
 		//tablasVerdad();
-		ejemplosIncrementosDecrementos();
+		//ejemplosIncrementosDecrementos();
+		//ejemplosConstantes();
+		ejemplosConversionesNumeroCadenas();
 	}
 
 }
