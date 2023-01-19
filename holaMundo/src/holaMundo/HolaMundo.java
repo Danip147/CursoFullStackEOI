@@ -257,23 +257,23 @@ public class HolaMundo {
 		
 	}
 	
-	public static void ejemplosScanner2() { //leer de la consola
+	public static void ejemplosScanner2() { // leer de la consola
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introduce su nombre: ");
-		String nombre = sc.nextLine(); //En nombre se almacena
+		String nombre = sc.nextLine(); // En nombre se almacena
 		System.out.println("Introduce su localidad: ");
 		String localidad = sc.nextLine();
 		System.out.println("Introduce su salario");
-		double salario = sc.nextDouble();
-		sc.nextLine(); // limpiar el buffer
+		double salario = Double.parseDouble(sc.next().replace(',', '.'));
+		sc.nextLine(); // despues de coger numeros limpiar BUFFER
 		System.out.println("Introduzca cuanto desearia ganar");
-		double salarioDeseado = sc.nextDouble();
-		sc.nextLine(); // limpiar el buffer
-		System.out.println("Hola " + nombre + " me encanta " 
-		+localidad + " y que usted gane " +  salario+ " y que quiera ganar " + salarioDeseado);
-		
-		sc.close();
-		
+		double salarioDeseado = Double.parseDouble(sc.next().replace(',', '.'));
+		sc.nextLine(); // despues de coger numeros limpiar BUFFER
+		System.out.println("Hola " + nombre + " me encanta " + localidad + " y que usted gane " + salario
+				+ " y que quiera ganar " + salarioDeseado);
+
+		sc.close(); // cierro scanner
+
 	}
 	
 	
