@@ -115,12 +115,30 @@ public class EstructurasDeControl {
 
 	}
 
+	public static void ejemploTernarias() {
+		int edad = 15;
+		/*
+		 * if(edad>=18) { System.out.println("Eres mayor de edad"); }else {
+		 * System.out.println("Eres menor de edad"); }
+		 */
+		
+		System.out.println(edad>=18 ? "Eres mayor de edad" : "Eres menor de edad");
+		
+		int descuento = edad>=18 ? 5: 20;
+		System.out.println(descuento);
+		
+		int euros = 1;
+		System.out.println("Cuesta " + euros + " euro" + (euros != 1 ? "s" : ""));
+		System.out.println("Cuesta " + euros + (euros != 1 ? " euros " : " euro "));
+	}
+	
 	public static void main(String[] args) {
 		// ejemploIf();
 		// ejemploIfElse();
 		// ejemploIfElseIfElse();
 		// ifElseIfElse();
-		ejemploSwitch();
+		// ejemploSwitch();
+		ejemploTernarias();
 	}
 
 }
