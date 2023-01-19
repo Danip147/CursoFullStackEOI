@@ -1,5 +1,7 @@
 package holaMundo;
 
+import java.util.Scanner;
+
 /**
  * Esta es la clase inicial del curso
  * 
@@ -117,7 +119,7 @@ public class HolaMundo {
 		
 		System.out.println(cadena1.equals(cadena2)); // false
 		System.out.println(cadena1.equals(cadena3)); // true
-		System.out.println(cadena1.equals(cadena4)); // false
+		System.out.println(cadena1.equals(cadena4)); // false 
 		
 		boolean cadenaIguales = cadena1.equals(cadena2); //false
 		
@@ -214,16 +216,80 @@ public class HolaMundo {
 		System.out.println("00"+prefijo + "-" + telefono);
 	}
 	
+	public static void ejemplosDeSaltos() {
+		System.out.println("Hola\nDani\nBien?");
+		System.out.println("Hola\n \tDani\nBien?");
+		System.out.println("Elige una opción");
+		System.out.println("\t1) Añadir producto");
+		System.out.println("\t2) Borrar producto");
+
+	}
+
+	public static void ejemplosFormateos() {
+		String dani = "Dani";
+		String gabi = "Gabi";
+		double salario1 = 95567.89;
+		double salario2 = 2589.6347;
+		
+		System.out.printf("%12s%14s\n","NOMBRE", "SALARIO");//los numeros son los huecos
+		System.out.println("--------------------------------");
+		System.out.printf("%12s%14.2f€\n", dani,salario1); // el .2 es para los numeros de decimales a mostrar
+		System.out.printf("%12s%14.2f€\n", gabi,salario2);
+		
+	}
+	
+	public static void ejemplosScanner() { //leer de la consola
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce su nombre: ");
+		String nombre = sc.nextLine(); //En nombre se almacena
+		System.out.println("Introduce su localidad: ");
+		String localidad = sc.nextLine();
+		System.out.println("Introduce su salario");
+		double salario = sc.nextDouble();
+		sc.nextLine(); // limpiar el buffer
+		System.out.println("Introduzca cuanto desearia ganar");
+		double salarioDeseado = sc.nextDouble();
+		sc.nextLine(); // limpiar el buffer
+		System.out.println("Hola " + nombre + " me encanta " 
+		+localidad + " y que usted gane " +  salario+ " y que quiera ganar " + salarioDeseado);
+		
+		sc.close();
+		
+	}
+	
+	public static void ejemplosScanner2() { //leer de la consola
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce su nombre: ");
+		String nombre = sc.nextLine(); //En nombre se almacena
+		System.out.println("Introduce su localidad: ");
+		String localidad = sc.nextLine();
+		System.out.println("Introduce su salario");
+		double salario = sc.nextDouble();
+		sc.nextLine(); // limpiar el buffer
+		System.out.println("Introduzca cuanto desearia ganar");
+		double salarioDeseado = sc.nextDouble();
+		sc.nextLine(); // limpiar el buffer
+		System.out.println("Hola " + nombre + " me encanta " 
+		+localidad + " y que usted gane " +  salario+ " y que quiera ganar " + salarioDeseado);
+		
+		sc.close();
+		
+	}
+	
 	
 	public static void main(String[] args) {
-		// ejemplosComentarios();
-		// ejemplosTipos1();
+		//ejemplosComentarios();
+		//ejemplosTipos1();
 		//ejemplosString();
 		//ejemplosBoolean();
 		//tablasVerdad();
 		//ejemplosIncrementosDecrementos();
 		//ejemplosConstantes();
-		ejemplosConversionesNumeroCadenas();
+		//ejemplosConversionesNumeroCadenas();
+		//ejemplosDeSaltos();
+		//ejemplosFormateos();
+		//ejemplosScanner();
+		ejemplosScanner2();
 	}
 
 }
