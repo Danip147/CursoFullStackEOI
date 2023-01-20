@@ -6,28 +6,23 @@
  * 1,2,3,4,5,6,7
 */
 
-
 package ejercicio19;
 
 import java.util.Scanner;
 
 public class Ejercicio19 {
-	
+
 	public static void ejercicio19() {
-		
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introduce un número: "); // 1234
 		int numeroUsuario = sc.nextInt();
-		
-		for (int i = 1; i <= numeroUsuario ; i++) {
-			System.out.print(i+",");
-			
+
+		for (int i = 1; i <= numeroUsuario; i++) {
+			System.out.print(i + ",");
 		}
-		
-		
+
 		sc.close();
-		
-		
 	}
 
 	public static void main(String[] args) {
