@@ -68,7 +68,7 @@ public class Ejercicio9 {
 
 	public static void dimeMes2() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduzca el número del mes");
+		System.out.println("Introduzca el número del mes: ");
 		int numeroMes = sc.nextInt();
 		
 		switch(numeroMes) {
