@@ -15,18 +15,18 @@
 package ejercicio23;
 
 public class Ejercicio23 {
-	
+
 	public static void ejercicio23() {
-		
+
 		for (int i = 9; i >= 1; i--) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print(j);
-				
+
 			}
-			
+
 			System.out.print("\n");
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
