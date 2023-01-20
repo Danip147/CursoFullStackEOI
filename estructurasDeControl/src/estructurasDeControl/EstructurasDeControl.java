@@ -178,9 +178,9 @@ public class EstructurasDeControl {
 		boolean adivina = false;
 		int intentos = 0;
 		while(!adivina && intentos < 3) { // (adivina == false)
-			intentos++;
-			System.out.println("Introduce la contraseña: ");
+			System.out.println("Introduce la contraseña (Tienes " + (3 - intentos)+ " intento" +(intentos!=2?"s":"")+ "):");
 			String respuesta = sc.nextLine();
+			intentos++;
 			if(respuesta.equals(password)) {
 				adivina = true;
 				}else {
