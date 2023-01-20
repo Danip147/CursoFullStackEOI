@@ -12,7 +12,7 @@ public class Ejercicio2 {
 	
 	public static void numeroMultiplo() {
 		Scanner sc = new Scanner (System.in);
-		System.out.println("Introduce un número");
+		System.out.println("Introduce un número: ");
 		int num = sc.nextInt();
 		
 		if (num % 10 == 0) {
