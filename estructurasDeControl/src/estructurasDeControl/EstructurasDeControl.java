@@ -132,13 +132,85 @@ public class EstructurasDeControl {
 		System.out.println("Cuesta " + euros + (euros != 1 ? " euros " : " euro "));
 	}
 	
+	public static void ejemploAmbito() {
+		int numero = 5;
+		int edad = 20;
+		
+		if (edad > 18) {
+			//int numero = 3; // en JAVA da error
+			int valor = 4;
+			System.out.println(numero);
+		}
+		//System.out.println(valor); // Da error porque la  variable no existe fuera del if
+		
+	}
+
+	/**
+	 * Este programa se ejecuta hasta que el usuario adivine la contraseña
+	 */
+	public static void ejemploWhile1() {
+		Scanner sc = new Scanner(System.in);
+		
+		String password = "1234";
+		boolean adivina = false;
+		while(!adivina) { // (adivina == false)
+			System.out.println("Introduce la contraseña: ");
+			String respuesta = sc.nextLine();
+			if(respuesta.equals(password)) {
+				adivina = true;
+				}else {
+					System.out.println("Fallaste\nSigue intentandolo");
+				}
+			}
+			System.out.println("Contraseña correcta!");
+			sc.close();
+			
+	}
+	
+	
+	/**
+	 * El programa permite advinar la password en 3 oportunidades
+	 */
+	public static void ejemploWhile2() {
+		Scanner sc = new Scanner(System.in);
+		
+		String password = "1234";
+		boolean adivina = false;
+		int intentos = 0;
+		while(!adivina && intentos < 3) { // (adivina == false)
+			intentos++;
+			System.out.println("Introduce la contraseña: ");
+			String respuesta = sc.nextLine();
+			if(respuesta.equals(password)) {
+				adivina = true;
+				}else {
+					System.out.println("Fallaste");
+				}
+			}
+		
+			System.out.println(adivina ? "Acertaste la contraseña" : "Gastaste todos los intentos");
+		
+			/*if (adivina) { //(adivina == true)
+				System.out.println("Contraseña correcta");
+			}else {
+				System.out.println("Gastaste todos los intentos");
+			}*/
+		
+			
+			sc.close();
+			
+	}
+	
 	public static void main(String[] args) {
 		// ejemploIf();
 		// ejemploIfElse();
 		// ejemploIfElseIfElse();
 		// ifElseIfElse();
 		// ejemploSwitch();
-		ejemploTernarias();
-	}
+		//ejemploTernarias();
+		//ejemploAmbito();
+		//ejemploWhile1()
+		ejemploWhile2()
+;	}
 
 }
