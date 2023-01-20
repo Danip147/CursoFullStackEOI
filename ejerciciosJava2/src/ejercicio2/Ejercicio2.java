@@ -6,10 +6,14 @@
 
 package ejercicio2;
 
+import java.util.Scanner;
+
 public class Ejercicio2 {
 	
 	public static void numeroMultiplo() {
-		int num = 125; 
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Introduce un número");
+		int num = sc.nextInt();
 		
 		if (num % 10 == 0) {
 			System.out.println("El número es multiplo de 10");
@@ -19,6 +23,8 @@ public class Ejercicio2 {
 		
 		// Con operador ternario
 		System.out.println(num % 10 == 0 ? "El número es multiplo de 10" : "El número no es multiplo de 10" );
+		
+		sc.close();
 	}
 
 		
