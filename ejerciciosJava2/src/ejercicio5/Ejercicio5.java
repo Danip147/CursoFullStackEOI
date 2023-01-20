@@ -8,25 +8,26 @@ package ejercicio5;
 import java.util.Scanner;
 
 public class Ejercicio5 {
-	
+
 	public static void division() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduce primer número: "); //10
+		System.out.println("Introduce primer número: "); // 10
 		int primerNumero = sc.nextInt();
 		sc.nextLine();
-		
-		System.out.println("Introduce primer número: "); //5
+
+		System.out.println("Introduce primer número: "); // 5
 		int segundoNumero = sc.nextInt();
 		sc.nextLine();
-		
-		if(segundoNumero != 0) {
-			System.out.println("El resultado de dividir " + primerNumero + " / " + segundoNumero + " es: " + (primerNumero/segundoNumero));
-		}else {
+
+		if (segundoNumero != 0) {
+			System.out.println("El resultado de dividir " + primerNumero + " / " + segundoNumero + " es: "
+					+ (primerNumero / segundoNumero));
+		} else {
 			System.out.println("El número no se puede dividir entre 0");
 		}
-		
-		
-		}
+		sc.close();
+
+	}
 
 	public static void main(String[] args) {
 		division();
