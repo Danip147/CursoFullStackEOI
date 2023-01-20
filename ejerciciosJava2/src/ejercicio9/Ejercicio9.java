@@ -7,6 +7,8 @@
 
 package ejercicio9;
 
+import java.util.Scanner;
+
 public class Ejercicio9 {
 
 	public static void dimeMes() {
@@ -64,8 +66,42 @@ public class Ejercicio9 {
 
 	}
 
+	public static void dimeMes2() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduzca el número del mes");
+		int numeroMes = sc.nextInt();
+		
+		switch(numeroMes) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10: 
+		case 12:
+			System.out.println("El mes tiene 31 días");
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			System.out.println("El mes tien 30 días");
+			break;
+		case 2: 
+			System.out.println("El mes tiene 28 días");
+			break;
+		default:
+			System.out.println("El número de mes introducido no es correcto");
+			break;
+		}
+		
+		
+		sc.close();
+	}
+	
 	public static void main(String[] args) {
-		dimeMes();
+		//dimeMes();
+		dimeMes2();
 
 	}
 
