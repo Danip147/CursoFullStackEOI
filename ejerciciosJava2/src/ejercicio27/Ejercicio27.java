@@ -23,9 +23,9 @@ public class Ejercicio27 {
 		int alto = sc.nextInt();
 		sc.nextLine();
 		
-		for (int i = 1; i <= alto ; i++) {
-			for (int j = 1; j <= ancho; j++) {
-				if(i == 1 || i == alto || j == ancho || j == 1) {
+		for (int i = 1; i <= alto ; i++) { // filas
+			for (int j = 1; j <= ancho; j++) { // lo que hay en cada fila
+				if(i == 1 || i == alto || j == 1 || j == ancho) {
 					System.out.print("*");
 				}else {
 					System.out.print(" ");
@@ -35,12 +35,7 @@ public class Ejercicio27 {
 			System.out.println();
 			
 		}
-		
-		
-		
 		sc.close();
-		
-		
 	}
 
 	public static void main(String[] args) {
