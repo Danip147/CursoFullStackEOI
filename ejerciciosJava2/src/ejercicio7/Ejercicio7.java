@@ -31,14 +31,14 @@ public class Ejercicio7 {
 				if (segundos > 0 && segundos <= 59) {
 					System.out.printf("Hora introducida: %02d:%02d:%02d", horas, minutos, segundos);
 				} else {
-					System.out.println("Error al introducir el tiempo");
+					System.out.println("Error al introducir los segundos");
 				}
 			} else {
-				System.out.println("Error al introducir el tiempo");
+				System.out.println("Error al introducir los minutos");
 			}
 		} else {
-			System.out.println("Error al introducir el tiempo");
-		}
+			System.out.println("Error al introducir las horas");
+			}
 		
 		
 	sc.close();
