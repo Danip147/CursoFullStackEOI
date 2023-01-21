@@ -19,9 +19,13 @@ public class Ejercicio26 {
 		System.out.println("Introduce un número: "); 
 		int numeroUsuario = sc.nextInt();
 		
-		for (int i = 1; i <= numeroUsuario; i++) { // esto son las filas
-			for (int j = 0; j < i; j++) { // lo que hay en cada fila
+		for (int i = 0; i < numeroUsuario; i++) { // esto son las filas
+			for (int j = 0; j < numeroUsuario; j++) { // lo que hay en cada fila
+				if(j < numeroUsuario - i - 1) {
+				System.out.print(" ");
+			}else {
 				System.out.print("*");
+				}
 			}
 			System.out.println();
 		}
