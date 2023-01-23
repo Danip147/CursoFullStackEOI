@@ -227,16 +227,16 @@ public class EstructurasDeControl {
 	}
 	
 	public static void acaboCurso() {
-		
+		int diasQuedan = 0; // contador
 		LocalDate fecha = LocalDate.now(); // dia de hoy (23/01/2023)
 		while (fecha.isBefore(LocalDate.parse("2023-03-31"))) {
 			if (fecha.getDayOfWeek()!= DayOfWeek.SATURDAY && fecha.getDayOfWeek()!= DayOfWeek.SUNDAY) {
 				System.out.println(fecha);
-				
+				diasQuedan++; // dias de clase No hasta mazto
 			}
 			fecha = fecha.plusDays(1); // fecha es igual a fecha + 1 
 		}
-		System.out.println("Has acabado el curso");
+		System.out.println("Te quedan " + diasQuedan+ " días");
 		
 	}
 	
