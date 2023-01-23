@@ -29,9 +29,9 @@ public class Ejercicio12 {
 			System.out.println("El precio de la entrada se queda en : " + precioTotal1 + "€");
 		} else if (edad >= 18 && edad <= 65) {
 			System.out.println("¿Es usted socio?");
-			String respuesta = sc.next().toLowerCase();
+			String respuesta = sc.next();
 
-			if (respuesta.equals("si")) {
+			if (respuesta.equalsIgnoreCase("si") || respuesta.equalsIgnoreCase("sí") || respuesta.equalsIgnoreCase("s")) {
 				System.out.println("El precio de la entrada se queda en : " + precioTotal2 + "€");
 			} else {
 				System.out.println("El precio de la entrada se queda en : " + precioEntrada + "€");
