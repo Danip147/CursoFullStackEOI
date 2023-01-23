@@ -45,9 +45,53 @@ public class Ejercicio12 {
 
 	}
 
-	public static void main(String[] args) {
-		descuento();
+	// Mismo ejercicio descuento grupo
+	public static void ejercicio12Grupo() {
+		final double MENOR_EDAD = 0.25;
+		final double DESCUENTO_SOCIO = 0.40;
+		final double DESCUENTO_JUBILADO = 0.75;
+		final int PRECIO_ENTRADA = 50;
+		final int MAYORIA_EDAD = 18;
+		final int EDAD_JUBILACION = 65;
+		Scanner sc = new Scanner (System.in);  // Para leer datos por pantalla
+		double precioEntrada = PRECIO_ENTRADA;  // Precio estándar sin descuentos
+		double precioTotalGrupo = 0;  // Almacenará el precio total
+		System.out.println("¿Cuántos sois?");
+		int personas = sc.nextInt();  // Ya tengo las personas
+		sc.nextLine();
+		int personasAtendidas = 0;
+		while(personasAtendidas<personas) {
+			System.out.println("Datos de la persona " + (personasAtendidas+1));
+			System.out.println("Introduzca su edad:");
+			int edad = sc.nextInt();
+			sc.nextLine();
+			precioEntrada = PRECIO_ENTRADA;  // Volver a poner el precio que toca para ver si se aplican descuentos
+			if(edad<MAYORIA_EDAD) {
+				precioEntrada = precioEntrada * (1-MENOR_EDAD);  
+			} else if(edad>=MAYORIA_EDAD && edad<EDAD_JUBILACION) {
+				System.out.println("Es usted socio (sí/no):");
+				String respuesta = sc.nextLine();
+				if(respuesta.equalsIgnoreCase("si") || respuesta.equalsIgnoreCase("sí") || respuesta.equalsIgnoreCase("s")) {
+					precioEntrada = precioEntrada * (1 - DESCUENTO_SOCIO);
+				}
+			} else {
+				precioEntrada = precioEntrada * (1-DESCUENTO_JUBILADO);
+			}
+			precioTotalGrupo += precioEntrada;
+			System.out.println("Precio de la entrada de la persona " + (personasAtendidas+1) + " es " + precioEntrada);
+			System.out.println("Precio del grupo hasta el momento: " + precioTotalGrupo);
+			personasAtendidas++;
+		}
+				
+		System.out.println("El precio FINAL del grupo es: " + precioTotalGrupo);
+		sc.close();
+	}
+		
+	
 
+	public static void main(String[] args) {
+		//descuento();
+		ejercicio12Grupo();
 	}
 
 }
