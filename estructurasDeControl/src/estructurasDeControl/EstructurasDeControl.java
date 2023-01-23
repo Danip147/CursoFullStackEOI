@@ -1,5 +1,7 @@
 package estructurasDeControl;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class EstructurasDeControl {
@@ -224,6 +226,20 @@ public class EstructurasDeControl {
 			
 	}
 	
+	public static void acaboCurso() {
+		
+		LocalDate fecha = LocalDate.now(); // dia de hoy (23/01/2023)
+		while (fecha.isBefore(LocalDate.parse("2023-03-31"))) {
+			if (fecha.getDayOfWeek()!= DayOfWeek.SATURDAY && fecha.getDayOfWeek()!= DayOfWeek.SUNDAY) {
+				System.out.println(fecha);
+				
+			}
+			fecha = fecha.plusDays(1); // fecha es igual a fecha + 1 
+		}
+		System.out.println("Has acabado el curso");
+		
+	}
+	
 	public static void main(String[] args) {
 		// ejemploIf();
 		// ejemploIfElse();
@@ -234,7 +250,8 @@ public class EstructurasDeControl {
 		//ejemploAmbito();
 		//ejemploWhile1()
 		//ejemploWhile2()
-		ejemploDoWhile1();
-;	}
+		//ejemploDoWhile1();
+		acaboCurso();
+	}
 
 }
