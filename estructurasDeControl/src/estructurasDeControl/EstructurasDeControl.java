@@ -201,6 +201,29 @@ public class EstructurasDeControl {
 			
 	}
 	
+	public static void ejemploDoWhile1() {
+		Scanner sc = new Scanner(System.in);
+		
+		String password = "1234";
+		boolean adivina = false;
+		int intentos = 0;
+		do { 
+			System.out.println("Introduce la contraseña (Tienes " + (3 - intentos)+ " intento" +(intentos!=2?"s":"")+ "):");
+			String respuesta = sc.nextLine();
+			if(respuesta.equals(password)) {
+				adivina = true;
+				}else {
+					System.out.println("Fallaste");
+				}
+			intentos++;
+			}while(!adivina && intentos < 3);
+		
+			System.out.println(adivina ? "Acertaste la contraseña" : "Gastaste todos los intentos");
+		
+	sc.close();
+			
+	}
+	
 	public static void main(String[] args) {
 		// ejemploIf();
 		// ejemploIfElse();
@@ -210,7 +233,8 @@ public class EstructurasDeControl {
 		//ejemploTernarias();
 		//ejemploAmbito();
 		//ejemploWhile1()
-		ejemploWhile2()
+		//ejemploWhile2()
+		ejemploDoWhile1();
 ;	}
 
 }
