@@ -45,6 +45,43 @@ public class Ejercicio12 {
 
 	}
 
+	
+	/**
+	 * resultado por Fran
+	 */
+	public static void ejercicio12() {
+		final double MENOR_EDAD = 0.25;
+		final double DESCUENTO_SOCIO = 0.40;
+		final double DESCUENTO_JUBILADO = 0.75;
+		Scanner sc = new Scanner (System.in);  // Para leer datos por pantalla
+		double precioEntrada = 50;
+		System.out.println("Introduzca su edad:");
+		int edad = sc.nextInt();
+		sc.nextLine();
+		if(edad<18) {
+			precioEntrada = precioEntrada * (1-MENOR_EDAD);  // precio * 0,75
+		} else if(edad>=18 && edad<65) {
+			System.out.println("Es usted socio (sí/no):");
+			String respuesta = sc.nextLine();
+			// Solución con expresión regular		
+			/*Pattern regex = Pattern.compile("^s[iíÍ]?$", Pattern.CASE_INSENSITIVE);			
+			Matcher m = regex.matcher(respuesta);
+			if(m.matches()) {
+				precioEntrada = precioEntrada * (1 - DESCUENTO_SOCIO);
+			*/
+			// Solución sin expresión regular
+			if(respuesta.equalsIgnoreCase("si") || respuesta.equalsIgnoreCase("sí") || respuesta.equalsIgnoreCase("s")) {
+				precioEntrada = precioEntrada * (1 - DESCUENTO_SOCIO);
+			}
+		} else {
+			precioEntrada = precioEntrada * (1-DESCUENTO_JUBILADO);
+		}
+		System.out.println("Su precio es: " + precioEntrada);
+		sc.close();
+	}
+	
+	
+	
 	// Mismo ejercicio descuento grupo
 	public static void ejercicio12Grupo() {
 		final double MENOR_EDAD = 0.25;
@@ -91,6 +128,7 @@ public class Ejercicio12 {
 
 	public static void main(String[] args) {
 		//descuento();
+		//ejercicio12();
 		ejercicio12Grupo();
 	}
 
