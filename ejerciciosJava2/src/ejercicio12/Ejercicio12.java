@@ -45,10 +45,6 @@ public class Ejercicio12 {
 
 	}
 
-	
-	/**
-	 * resultado por Fran
-	 */
 	public static void ejercicio12() {
 		final double MENOR_EDAD = 0.25;
 		final double DESCUENTO_SOCIO = 0.40;
@@ -79,10 +75,9 @@ public class Ejercicio12 {
 		System.out.println("Su precio es: " + precioEntrada);
 		sc.close();
 	}
-	
-	
-	
-	// Mismo ejercicio descuento grupo
+	/**
+	 * Mismo ejercicio para un grupo de personas
+	 */
 	public static void ejercicio12Grupo() {
 		final double MENOR_EDAD = 0.25;
 		final double DESCUENTO_SOCIO = 0.40;
@@ -123,7 +118,6 @@ public class Ejercicio12 {
 		System.out.println("El precio FINAL del grupo es: " + precioTotalGrupo);
 		sc.close();
 	}
-		
 	
 
 	public static void main(String[] args) {
