@@ -26,9 +26,9 @@ public class Ejercicio7 {
 		int segundos = sc.nextInt();
 		sc.nextLine();
 		
-		if (horas > 0 && horas <= 24) {
-			if (minutos > 0 && minutos <= 59) {
-				if (segundos > 0 && segundos <= 59) {
+		if (horas >= 0 && horas <= 24) {
+			if (minutos >= 0 && minutos <= 60) {
+				if (segundos >= 0 && segundos <= 60) {
 					System.out.printf("Hora introducida: %02d:%02d:%02d", horas, minutos, segundos);
 				} else {
 					System.out.println("Error al introducir los segundos");
@@ -66,8 +66,8 @@ public class Ejercicio7 {
 	}
 
 	public static void main(String[] args) {
-		//dimeHoras();
-		ejercicio7();
+		dimeHoras();
+		//ejercicio7();
 
 	}
 
