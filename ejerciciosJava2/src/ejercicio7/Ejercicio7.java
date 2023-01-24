@@ -43,9 +43,31 @@ public class Ejercicio7 {
 		
 	sc.close();
 	}
+	
+	public static void ejercicio7() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce un número de horas: ");
+		int horas = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Introduce un número de minutos: ");
+		int minutos = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Introduce un número de segundos: ");
+		int segundos = sc.nextInt();
+		sc.nextLine();
+		
+		if(horas < 0 || horas > 23 || minutos < 0 || minutos > 59 || segundos <0 || segundos > 59) {
+			System.out.println("valores erroneos");
+		}else {
+			System.out.printf("Hora introducida: %02d:%02d:%02d", horas, minutos, segundos);
+		}
+		
+		sc.close();
+	}
 
 	public static void main(String[] args) {
-		dimeHoras();
+		//dimeHoras();
+		ejercicio7();
 
 	}
 
