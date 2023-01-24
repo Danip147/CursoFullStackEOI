@@ -2,6 +2,8 @@ package estructurasDeControl;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class EstructurasDeControl {
@@ -273,6 +275,16 @@ public class EstructurasDeControl {
 			sc.close();
 		}
 	
+		public static void ejemploImprimirFecha(){
+			
+			LocalDate fecha = LocalDate.now();
+			LocalTime hora = LocalTime.now();
+			LocalDateTime fechaHora = LocalDateTime.now();
+			
+			System.out.println(fecha);
+			System.out.println(hora);
+			System.out.println(fechaHora);
+		}
 	
 	
 	
@@ -288,7 +300,8 @@ public class EstructurasDeControl {
 		//ejemploWhile2()
 		//ejemploDoWhile1();
 		//acaboCurso();
-		ejemploDoWhile2();
+		//ejemploDoWhile2();
+		ejemploImprimirFecha();
 	}
 
 }
