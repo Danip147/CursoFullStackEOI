@@ -240,6 +240,42 @@ public class EstructurasDeControl {
 		
 	}
 	
+		/**
+		 * Ejemplo de menú
+		 */
+	
+		public static void ejemploDoWhile2() {
+			Scanner sc = new Scanner(System.in);
+			int opcion = -1; // le damos una opcion no aparazca en el menu
+
+			do {
+				// Impresion de menu
+				System.out.println("1. Primera opción");
+				System.out.println("2. Segunda opción");
+				System.out.println("3. Tercera opción");
+				System.out.println("4. Cuarta opción");
+				System.out.println("0. Salir");
+				System.out.println("Seleccione opción:");
+				// obtencion de la opcion
+				opcion = sc.nextInt();
+				sc.nextLine();
+				// tratamiento de la opcion
+				switch (opcion) {
+				case 1 -> System.out.println("Has elegido la primera opción");
+				case 2 -> System.out.println("Has elegido la segunda opción");
+				case 3 -> System.out.println("Has elegido la tercera opción");
+				case 4 -> System.out.println("Has elegido la cuarta opción");
+				case 0 -> System.out.println("¡Gracias por usar nuestro programa!");
+				default -> System.out.println("La opción selecionada no es correcta");
+				}
+
+			} while (opcion != 0);
+			sc.close();
+		}
+	
+	
+	
+	
 	public static void main(String[] args) {
 		// ejemploIf();
 		// ejemploIfElse();
@@ -251,7 +287,8 @@ public class EstructurasDeControl {
 		//ejemploWhile1()
 		//ejemploWhile2()
 		//ejemploDoWhile1();
-		acaboCurso();
+		//acaboCurso();
+		ejemploDoWhile2();
 	}
 
 }
