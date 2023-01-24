@@ -320,7 +320,7 @@ public class EstructurasDeControl {
 		}
 
 	}
-	
+
 	public static void ejemploFor3() { // for con decremento
 
 		for (int i = 10; i > 0; i--) {
@@ -328,49 +328,75 @@ public class EstructurasDeControl {
 		}
 
 	}
-	
+
 	public static void ejemploFor4() { // sacar números de 2 en 2
 
-		for (int i = 0; i < 100; i = i+2) {
+		for (int i = 0; i < 100; i = i + 2) {
 			System.out.println(i);
 		}
 
 	}
-	
+
 	public static void ejemploBreak() {
 		Scanner sc = new Scanner(System.in);
-		
+
 		for (int i = 0; i < 5; i++) {
 			System.out.println("Introduce password:");
 			String password = sc.nextLine();
-			if(password.contains("kk")) {
+			if (password.contains("kk")) {
 				break; // si encuentra una palabra con kk ya no ejecuta más el bucle
 			}
-			
-			//No se ejecuta si se ha ejecutado el continue
+
+			// No se ejecuta si se ha ejecutado el continue
 			System.out.println("Gracias por introducir su contraseña.");
 		}
-		
+
 		sc.close();
 	}
-	
+
 	public static void ejemploContinue() {
 		Scanner sc = new Scanner(System.in);
-		
+
 		for (int i = 0; i < 5; i++) {
 			System.out.println("Introduce password:");
 			String password = sc.nextLine();
-			if(password.contains("kk")) {
-				continue; // si encuentra una palabra con kk ejecuta siempre todo el bucle pero no lo que que da detras del continue en esa iteracion
+			if (password.contains("kk")) {
+				continue; // si encuentra una palabra con kk ejecuta siempre todo el bucle pero no lo que
+							// que da detras del continue en esa iteracion
 			}
-			
-			
+
 			System.out.println("Gracias por introducir su contraseña.");
 		}
-		
+
 		sc.close();
 	}
-	
+
+	public static void ejemploForAnidadosTablasMultiplicar() {
+		for (int tabla = 1; tabla <= 5; tabla++) {
+			for (int num = 1; num <= 10; num++) {
+				System.out.println(tabla + " x " + num + " = " + (tabla * num));
+			}
+		}
+	}
+
+	public static void ejemploForAnidadosTablasMultiplicarB() {
+		for (int tabla = 1; tabla <= 5; tabla++) {
+			System.out.println("Comienzo de la table del " + tabla);
+			for (int num = 1; num <= 10; num++) {
+				System.out.println(tabla + " x " + num + " = " + (tabla * num));
+			}
+		}
+	}
+
+	public static void ejemploForAnidadosTablasMultiplicarC() {
+		for (int tabla = 1; tabla <= 5; tabla++) {
+			System.out.println("Comienzo de la table del " + tabla);
+			for (int num = 1; num <= 10; num++) {
+				System.out.println(tabla + " x " + num + " = " + (tabla * num));
+			}
+			System.out.println("Fin de la table del " + tabla);
+		}
+	}
 
 	public static void main(String[] args) {
 		// ejemploIf();
@@ -386,9 +412,11 @@ public class EstructurasDeControl {
 		// acaboCurso();
 		// ejemploDoWhile2();
 		// ejemploImprimirFecha();
-		//ejemploFor1();
-		//ejemploFor1b();
-		ejemploContinue();
+		// ejemploFor1();
+		// ejemploFor1b();
+		// ejemploContinue();
+		// ejemploForAnidadosTablasMultiplicar();
+		ejemploForAnidadosTablasMultiplicarC();
 	}
 
 }
