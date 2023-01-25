@@ -371,6 +371,14 @@ public class EstructurasDeControl {
 		sc.close();
 	}
 
+	public static void ejemploForComplejo() {
+		for (int i = 0, j = 10; i <= 10 && j > 5; i++, j--) { // 0+10, 1+9, 2+8...10+0
+
+			System.out.println(i + " + " + j + " = " + (i + j));
+
+		}
+	}
+
 	public static void ejemploForAnidadosTablasMultiplicar() {
 		for (int tabla = 1; tabla <= 5; tabla++) {
 			for (int num = 1; num <= 10; num++) {
