@@ -19,7 +19,24 @@ public class Ejercicio19 {
 		int numeroUsuario = sc.nextInt();
 
 		for (int i = 1; i <= numeroUsuario; i++) {
-			System.out.print(i + ",");
+			if (i != numeroUsuario) { // si no es el ultimo
+				System.out.print(i + ",");
+			} else { // Si es el ultimo
+				System.out.print(i + "");
+			}
+		}
+
+		sc.close();
+	}
+	
+	public static void ejercicio19b() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Introduce un número: "); // 1234
+		int numeroUsuario = sc.nextInt();
+
+		for (int i = 1; i <= numeroUsuario; i++) {
+			System.out.print(i + ((i != numeroUsuario) ? " ," : " "));
 		}
 
 		sc.close();
@@ -27,6 +44,7 @@ public class Ejercicio19 {
 
 	public static void main(String[] args) {
 		ejercicio19();
+		ejercicio19b();
 
 	}
 
