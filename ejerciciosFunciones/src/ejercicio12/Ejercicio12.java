@@ -7,20 +7,23 @@ package ejercicio12;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Ejercicio12 {
 	
-	public static String ordenaCadena(String... cadenas) {
-		Arrays.sort(cadenas); // lo ordeno
+	public static void ordenaCadena(String... cadenas) {
 		
-		Collections.reverse(Arrays.asList(cadenas)); // lo invierto
+		//Arrays.sort(cadenas); // lo ordeno
+		
+		//Collections.reverse(Arrays.asList(cadenas)); // lo invierto lo paso a lista
+		
+		Arrays.sort(cadenas, Comparator.reverseOrder()); // orden descendete
 		
 		 for (String cadena : cadenas) { // lo imprimo
 			System.out.println(cadena);
 		}
-		return null;
 		
-		
+			
 	}
 
 	public static void main(String[] args) {

@@ -1,0 +1,10 @@
+package funciones;
+
+public class EjemplosProfe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
