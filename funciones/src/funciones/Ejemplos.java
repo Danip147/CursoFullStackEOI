@@ -1,5 +1,7 @@
 package funciones;
 
+import java.util.Arrays;
+
 public class Ejemplos {
 	
 	public static void imprimirHola () {
@@ -61,7 +63,6 @@ public class Ejemplos {
 		resultado = numero1 + numero2;
 		return resultado;
 	}
-	
 	
 	
 	public static void main(String[] args) {
