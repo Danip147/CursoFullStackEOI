@@ -6,7 +6,12 @@ import java.nio.file.Paths;
 
 public class TeoriaFicherosPruebasDani {
 
-	// poder leer un fichero
+	/**
+	 * Funcion para leer un fichero
+	 * @param nombreFichero
+	 * @return
+	 * @throws IOException
+	 */
 	public static String leerFicheroJava8(String nombreFichero) throws IOException {
 	
 		String contents = new String(Files.readAllBytes(Paths.get(nombreFichero)));
@@ -14,14 +19,17 @@ public class TeoriaFicherosPruebasDani {
 		return contents;
 	}
 	
+	/**
+	 * Funcion que te separa el contenido separado por caracter introducido por usuario
+	 * @param contents
+	 * @param separador
+	 * @return
+	 */
 	public static double separaCadena(String contents, String separador) {
 		String[] partes = contents.split(";");
-		
 		Double suma = Double.parseDouble(partes[1]) + Double.parseDouble(partes[3]) + Double.parseDouble(partes[5])
 						+ Double.parseDouble(partes[7]) + Double.parseDouble(partes[9]);
-
-		double media = suma / partes.length;
-
+		double media = suma / 5;
 		return media;
 	}
 	
@@ -30,7 +38,9 @@ public class TeoriaFicherosPruebasDani {
 		String contenido = leerFicheroJava8("C:\\ficheros\\alumnos.txt");
 		
 		double mediaNumeros = separaCadena(contenido, ";");
-		System.out.println(mediaNumeros);
+		System.out.printf("La media es: "+ "%2.2f",mediaNumeros);
+		
+//		System.out.println(mediaNumeros);
 	
 
 	}
