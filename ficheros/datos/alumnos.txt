@@ -1,0 +1,5 @@
+Daniel;8.25;
+Juan;7.80;
+Natalia;5.24;
+Vanesa;4.5;
+Jesus;9.2;
