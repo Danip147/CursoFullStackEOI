@@ -77,7 +77,12 @@ public class TeoriaFicheros {
 			}
 	}
 	
-	
+	/**
+	 * Metodo para añadir elementos
+	 * @param ruta
+	 * @param lineas
+	 * @return
+	 */
 	public static boolean anyadirLineasJava8(Path ruta, List<String> lineas) {
 		try {
 			Files.write(ruta, lineas, StandardOpenOption.APPEND);
@@ -174,7 +179,7 @@ public class TeoriaFicheros {
 		}
 		
 		if(anyadirLineasJava8(Paths.get("C:\\ficheros\\alumnosLineas.txt"), lineas2)) {
-			System.out.println("El fichero se escribio correctamnte");
+			System.out.println("Las líneas se añadieron correctamnte correctamnte");
 		}else {
 			System.out.println("Error al escribir");
 		}

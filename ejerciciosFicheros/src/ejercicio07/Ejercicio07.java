@@ -23,13 +23,18 @@ public class Ejercicio07 {
 		 * @return
 		 */
 		public static String preguntaUsuario() {
+
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Introduce nombre de fichero: ");
 			String archivo = sc.nextLine();
 			return archivo;
 
 		}
-	
+		/**
+		 * Funcion que intenta ejecutar el fichero
+		 * @param ruta
+		 * @return
+		 */
 		public static List<String> devolverLineasJava8(Path ruta) {
 
 			try { // intenta ejecutar este codigo
@@ -58,16 +63,14 @@ public class Ejercicio07 {
 		
 			int elementosLista = datosDevueltos.size(); // devuelve el numero de elementos de una lista.
 			Random ramdon = new Random(); // crea un objeto de tipo random para sacar numeros aleatorios.
-			int azar = ramdon.nextInt(elementosLista); // te saca un numero aleatorio entre 0 y elementosLista -1.
-//			int numeroAzar = new Random().nextInt(datosDevueltos.size());
-			System.out.println("La palabra aletoria es: " + datosDevueltos.get(azar));
+			int azar = ramdon.nextInt(elementosLista); // te saca un numero aleatorio entre 0 y elementosLista -1. 
+			
+//			int numeroAzar = new Random().nextInt(datosDevueltos.size()); // Lo mismo que lo anterior pero en una liena
+			
+			System.out.println("La palabra aletoria es: " + datosDevueltos.get(azar)); // El metodo get te coje una poscion de una lista.
 		} 
 			
-			
-//			Random rand = new Random();
-//		    int index = rand.nextInt(datosDevueltos.size());
-//		    String palabraRandom = datosDevueltos.get(index);
-//		    System.out.println("La palabra elegida al azar es: " + palabraRandom);
+
 	}
 
 }
