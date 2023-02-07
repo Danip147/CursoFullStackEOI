@@ -46,6 +46,39 @@ public class Ejercicio07 {
 			}
 
 		}
+		/**
+		 * Método para intentar acertar un palabra.
+		 * @param palabra
+		 */
+		public static void aciertaPalabra(String palabra) {
+			Scanner sc = new Scanner(System.in);
+			
+			final int MAXIMO_INTENTOS = 3;
+			int contadorIntentos = 0;
+			boolean acierto = false;
+			
+			
+			do {
+				System.out.println("Introduce palabra: ");
+				System.out.println(palabra);
+				String opcionUsuario = sc.nextLine().toLowerCase();
+				if (opcionUsuario.equals(palabra)) {
+					acierto = true;
+					
+				}
+				
+				contadorIntentos++;
+			}while(!acierto && contadorIntentos < MAXIMO_INTENTOS);
+			
+			if(acierto) {  // He salido del bucle acertando
+				System.out.println("¡¡¡Correcto!!! acertaste la palabra, la palabra era: " + palabra);
+			} else {
+				System.out.println("Gastaste tus intentos. La palabra era " + palabra);
+			}
+	
+			sc.close();
+				
+		}
 	
 		
 	
@@ -66,8 +99,10 @@ public class Ejercicio07 {
 			int azar = ramdon.nextInt(elementosLista); // te saca un numero aleatorio entre 0 y elementosLista -1. 
 			
 //			int numeroAzar = new Random().nextInt(datosDevueltos.size()); // Lo mismo que lo anterior pero en una liena
+			String palabraAleatoria = datosDevueltos.get(azar);
+//			System.out.println("La palabra aletoria es: " + datosDevueltos.get(azar)); // El metodo get te coje una poscion de una lista.
 			
-			System.out.println("La palabra aletoria es: " + datosDevueltos.get(azar)); // El metodo get te coje una poscion de una lista.
+			aciertaPalabra(palabraAleatoria);
 		} 
 			
 
