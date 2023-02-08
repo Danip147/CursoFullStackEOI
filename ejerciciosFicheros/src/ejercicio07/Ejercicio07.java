@@ -60,13 +60,10 @@ public class Ejercicio07 {
 			
 			do {
 				System.out.println("Introduce palabra: ");
-				System.out.println(palabra);
 				String opcionUsuario = sc.nextLine().toLowerCase();
 				if (opcionUsuario.equals(palabra)) {
 					acierto = true;
-					
 				}
-				
 				contadorIntentos++;
 			}while(!acierto && contadorIntentos < MAXIMO_INTENTOS);
 			
@@ -81,8 +78,6 @@ public class Ejercicio07 {
 		}
 	
 		
-	
-
 	public static void main(String[] args) {
 		
 		//pedimos datos al usuario
@@ -100,7 +95,7 @@ public class Ejercicio07 {
 			
 //			int numeroAzar = new Random().nextInt(datosDevueltos.size()); // Lo mismo que lo anterior pero en una liena
 			String palabraAleatoria = datosDevueltos.get(azar);
-//			System.out.println("La palabra aletoria es: " + datosDevueltos.get(azar)); // El metodo get te coje una poscion de una lista.
+//			System.out.println("La palabra aletoria es: " + datosDevueltos.get(azar)); // El metodo get te coje una poscion de una lista te indica la palabra
 			
 			aciertaPalabra(palabraAleatoria);
 		} 
