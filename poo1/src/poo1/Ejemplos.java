@@ -254,6 +254,14 @@ public class Ejemplos {
 		
 	}
 	
+	public static void falloSiNoSeCorrige() {
+		Equipo equipo = new Equipo();
+		Jugador fran = new Jugador("Fran", 45, 50000);
+		equipo.getJugadores().add(fran);
+		equipo.getEstadio().setNombre("Mi estadio");
+		System.out.println("Fin del programa");
+	}
+	
 	
 	
 	public static void main(String[] args) {
