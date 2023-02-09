@@ -53,6 +53,12 @@ public class Ejemplos {
 		} else {
 			System.out.println("Los coches son diferentes");
 		}
+		
+		if(miCoche.esCaro()) {
+			System.out.println("El coche es caro");
+		}else {
+			System.out.println("El coche es barato");
+		}
 
 	}
 
@@ -82,13 +88,77 @@ public class Ejemplos {
 	}
 	
 	
+	public static void ejercicio02() {
+		List<Jugador> jugadores = new ArrayList<Jugador>();
+		Jugador jugador1 = new Jugador("Daniel", -28, -15000);
+		Jugador jugador2 = new Jugador("Jesus", 42, 60000);
+		jugadores.add(jugador1); // jugador que ocupa la posicion 0
+		jugadores.add(jugador2); // jugador que ocupa la posicion 1
+		jugadores.add(null); // jugador que ocupa la posicion 2
+		jugadores.add(null); // jugador que ocupa la posicion 3
+		Jugador jugador4 = new Jugador("Paco", -28, -15000);
+		Jugador jugador5 = new Jugador("Ximo", 42, 60000);
+		jugadores.add(jugador4); 
+		jugadores.add(jugador5);
+		
+		//System.out.println(jugadores);
+		
+		//Programacion Estructurada
+//		for(Jugador jugador: jugadores ) {
+//			if(jugador != null) {
+//				System.out.println(jugador.getNombre());
+//			}
+//			
+//		}
+		// Programacion Funcional
+		jugadores.stream()
+			.filter(e -> e != null) // filtro para no trabajar con los nulos
+			.forEach(e -> System.out.println(e.getNombre())); // obtengo el nombere de los que quedan
+		
+		
+	}
+	
+	
+	public static void ejercicio03() {
+		List<Jugador> jugadores = new ArrayList<Jugador>();
+		Jugador jugador1 = new Jugador("Daniel", -28, -15000);
+		Jugador jugador2 = new Jugador("Jesus", 42, 60000);
+		jugadores.add(jugador1); // jugador que ocupa la posicion 0
+		jugadores.add(jugador2); // jugador que ocupa la posicion 1
+		jugadores.add(null); // jugador que ocupa la posicion 2
+		jugadores.add(null); // jugador que ocupa la posicion 3
+		Jugador jugador4 = new Jugador("Paco", -28, -15000);
+		Jugador jugador5 = new Jugador("Ximo", 42, 60000);
+		jugadores.add(jugador4); 
+		jugadores.add(jugador5);
+		
+		List<Jugador> jugadores2 = new ArrayList<Jugador>(); // la segunda lista inicialmente esta vacia
+		// Copiar una lista a partir de otra con programacion estructurada
+		for(Jugador jugador : jugadores) {
+			if (jugador != null) {
+				jugadores2.add(new Jugador(jugador));
+			}else {
+				jugadores2.add(null);
+			}
+		}
+		jugadores.stream().forEach(e ->{
+			if (e != null) {
+				jugadores2.add(new Jugador(e)); 
+			}else {
+				jugadores2.add(null);
+			}
+		});
+		jugadores2.get(0).setNombre("Posicion 0");	
+		System.out.println(jugadores);
+		System.out.println(jugadores2);
+		
+	}
+	
+	
 	public static void ejemploListasJugadores() {
 		
 		// Creo una lista vacia para almacenar los jugadores
 		List<Jugador> jugadores = new ArrayList<Jugador>();
-		
-		
-		
 		Jugador daniel = new Jugador("Daniel", -28, -15000);
 		Jugador jesus = new Jugador("Jesus", 42, 60000);
 		Jugador enrique = new Jugador("Enrique", 20, 100000);
@@ -146,12 +216,53 @@ public class Ejemplos {
 	}
 	
 	
+	public static void ejemploEquipos() {
+		Equipo barsa = new Equipo(); // creo el equipo
+		barsa.setNombre("F.C. Barcelona");
+		barsa.setPresupuesto(40000000);
+		
+		
+		Estadio campNou = new Estadio(); // creo el estadio
+		campNou.setNombre("Spotify Camp Nou");
+		campNou.setCapacidad(1000000);
+		barsa.setEstadio(campNou); // asigno el estadio al equipo
+		
+		List<Jugador> jugadoresBarsa = new ArrayList<Jugador>(); // creo la lista y le meto datos
+		jugadoresBarsa.add(new Jugador("Dani",28, 100000));
+		jugadoresBarsa.add(new Jugador("Fran",25, 200000));
+		jugadoresBarsa.add(new Jugador("Paco",21, 200000));
+		jugadoresBarsa.add(new Jugador("Juan",18, 800000));
+		
+		barsa.setJugadores(jugadoresBarsa);
+		// imprimo el equipo
+//		System.out.println(barsa);
+		
+		
+		Equipo madrid = new Equipo(barsa);
+		madrid.setNombre("Real Madrid");
+		madrid.setPresupuesto(100000);
+		barsa.getEstadio().setNombre("Nuevo campo"); // le cambio el nombre del estadio del barsa
+		madrid.getEstadio().setNombre("Santiago Bernabeu");
+		madrid.getEstadio().setCapacidad(80000);
+		barsa.getJugadores().get(0).setNombre("Daniel");  // accede al equipo, luego a su primer elemento y luego cambia el nombre
+		madrid.getJugadores().get(1).setNombre("Ate");
+		
+		
+		System.out.println(barsa); // imprimo barca
+		System.out.println(madrid); // imprimo madrid
+		
+		
+	}
+	
 	
 	
 	public static void main(String[] args) {
 //		ejemplosCoches();
 //		ejercicio01();
-		ejemploListasJugadores();
+//		ejemploListasJugadores();
+//		ejemploEquipos();
+//		ejercicio02();
+		ejercicio03();
 		
 		
 	}
