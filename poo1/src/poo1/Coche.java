@@ -138,8 +138,21 @@ public class Coche {
 		}
 
 		
+		// 6. Métodos adicionales
 		
-		
+		public boolean esCaro() {
+//			boolean resultado = false;
+//			if(precio > 30000) {
+//				resultado = true;
+//			}else {
+//				resultado = false;
+//			}
+//			return resultado;
+			
+//			return precio>30000?true:false;
+			
+			return precio>30000;
+		}
 		
 		
 		
