@@ -263,6 +263,63 @@ public class Ejemplos {
 	}
 	
 	
+	public static void ejemplosHerencias() {
+		//Animal animal = new Animal ("Mi animal", 10);
+		
+		Ave pajaro = new Ave(true);
+//		Ave gallina = new Ave("Gallina", 3, false);
+		Ave gallina = new Ave("Animal desconocido", 1, false);
+		
+//		animal.comer();
+		
+		
+		
+		
+//		pajaro.comer();
+		pajaro.ponerHuevos();
+		System.out.println("El pajaro se llama : " + pajaro.getNombre());
+		
+		Mamifero leon = new Mamifero("León", 210, true);
+		leon.comer();
+		System.out.println(leon);
+		System.out.println(pajaro);
+		
+		Mamifero gato = new Mamifero("Animal desconocido", 1, true);
+		
+		if(pajaro.equals(gallina)) {
+			System.out.println("El pajaro y la gallina son iguales");
+		}else {
+			System.out.println("El pajaro y la gallina NO son iguales");
+		}
+		
+		// aqui aunque se llaman igaul y pesan lo mismo y son animales los 
+		// detecta diferente porque son de distinta clase.
+		if(pajaro.equals(gato)) {
+			System.out.println("El pajaro y la gato son iguales");
+		}else {
+			System.out.println("El pajaro y la gato NO son iguales");
+		}
+		
+		
+		List<Animal> animales = new ArrayList<Animal>();
+		animales.add(pajaro);
+		animales.add(gallina);
+		animales.add(leon);
+		animales.forEach(e -> System.out.println(e)); // Aqui hay polimorfismo
+		
+		System.out.println("Ejemplo instanceOf: ");
+		for (Animal animal : animales) {
+			if(animal instanceof Ave) {// es un animal pero cual???
+				System.out.println("El número de pollitos es: " + ((Ave)animal).pollitos(animal.getNombre()));
+				System.out.println(animal.rugido());
+			}else if (animal instanceof Mamifero) {
+				System.out.println(animal.rugido());
+			}
+		}
+	}
+	
+	
+	
 	
 	public static void main(String[] args) {
 //		ejemplosCoches();
@@ -270,8 +327,8 @@ public class Ejemplos {
 //		ejemploListasJugadores();
 //		ejemploEquipos();
 //		ejercicio02();
-		ejercicio03();
-		
+//		ejercicio03();
+		ejemplosHerencias();
 		
 	}
 }
