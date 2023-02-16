@@ -20,7 +20,7 @@ public class App {
 		
 		personas.forEach(e -> System.out.println(e));
 		
-		personas.sort(null);
+		
 		
 	}
 
