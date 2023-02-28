@@ -212,9 +212,9 @@ public class App
 		List<List<String>> todasClases = new ArrayList<List<String>>(Arrays.asList(clase1,clase2,clase3));
 		
 		List<String> todosAlumnos = todasClases.stream()
-		.flatMap(e->e.stream())   // te permite unir todas las sublistas en una única lista
-		.collect(Collectors.toList());
-		todosAlumnos.forEach(e->System.out.println(e));		
+			.flatMap(e->e.stream())   // te permite unir todas las sublistas en una única lista
+			.collect(Collectors.toList());
+			todosAlumnos.forEach(e->System.out.println(e));		
 	}
 	
 	/**
