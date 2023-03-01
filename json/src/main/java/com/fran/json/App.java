@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fran.json.entidades.Films;
-import com.fran.json.entidades.Jokes;
 import com.fran.json.entidades.People;
 import com.fran.json.entidades.Posts;
 import com.fran.json.entidades.Team;
@@ -87,14 +86,9 @@ public class App
     	String lecturaUrl = InternetUtils.readUrl("https://api.football-data.org/v4/teams/86",TOKEN_FOOTBALL_DATA);
     	System.out.println(lecturaUrl);
     	*/
-//    	Team realMadrid = JsonUtils.leerObjetoConToken("https://api.football-data.org/v4/teams/86", TOKEN_FOOTBALL_DATA, Team.class);
-//    	System.out.println(realMadrid);
-//    	Team equipo87 = JsonUtils.leerObjetoConToken("https://api.football-data.org/v4/teams/87", TOKEN_FOOTBALL_DATA, Team.class);
-//    	System.out.println(equipo87);
-    	
-    	Jokes chuck = JsonUtils.leerObjeto("https://api.chucknorris.io/jokes/random", Jokes.class);
-    	System.out.println(chuck);
-    	
-    	
+    	Team realMadrid = JsonUtils.leerObjetoConToken("https://api.football-data.org/v4/teams/86", TOKEN_FOOTBALL_DATA, Team.class);
+    	System.out.println(realMadrid);
+    	Team equipo87 = JsonUtils.leerObjetoConToken("https://api.football-data.org/v4/teams/87", TOKEN_FOOTBALL_DATA, Team.class);
+    	System.out.println(equipo87);
     }
 }
