@@ -14,55 +14,49 @@ import com.dani.harry.utilidades.JsonUtils;
 import com.dani.harry.utilidades.SerializacionUtils;
 
 public class App {
-	
+
 	static List<Personaje> personajes = new ArrayList<Personaje>();
-	
+
 	final static String URI = "jdbc:mysql://localhost:3306/harry_potter";
 	final static String USER = "root";
 	final static String PASSWORD = "";
 	public static Connection con;
-	
-	public static void ejemploSerializar(){
-		 // Probamos la serializacion
-        if(SerializacionUtils.serializarListaObjetos("personajes.dat", personajes)) {
-        	System.out.println("La serializacion fue satisfactoria");
-        } else {
-        	System.out.println("La serializacion falló");
-        }
+
+	public static void ejemploSerializar() {
+		// Probamos la serializacion
+		if (SerializacionUtils.serializarListaObjetos("personajes.dat", personajes)) {
+			System.out.println("La serializacion fue satisfactoria");
+		} else {
+			System.out.println("La serializacion falló");
+		}
 	}
-	
+
 	public static void obtenerDatosApi() {
 		// Obtener los datos de la API
-        personajes = JsonUtils.devolverArrayGsonGenerico("https://hp-api.onrender.com/api/characters", Personaje[].class);
-        
-        personajes.stream()
-        .filter(e->e.getName().equals("Harry Potter"))
-        .forEach(e->System.out.println(e));
+		personajes = JsonUtils.devolverArrayGsonGenerico("https://hp-api.onrender.com/api/characters",
+				Personaje[].class);
+
+		personajes.stream().filter(e -> e.getName().equals("Harry Potter")).forEach(e -> System.out.println(e));
 	}
-	
-	
+
 	public static void rellenarFechaNacLD() {
-		  // Rellenar el campo dateOfBirthLD
-        personajes.stream()
-        	.peek(e -> {
-        		if(e.getDateOfBirth()!= null)
-        			e.setDateOfBirthLD(LocalDate.parse(e.getDateOfBirth(),DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-        	})
-        	.filter(e -> e.getName().equals("Harry Potter"))
-        	.forEach(e -> System.out.println(e));
-		
+		// Rellenar el campo dateOfBirthLD
+		personajes.stream().peek(e -> {
+			if (e.getDateOfBirth() != null)
+				e.setDateOfBirthLD(LocalDate.parse(e.getDateOfBirth(), DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		}).filter(e -> e.getName().equals("Harry Potter")).forEach(e -> System.out.println(e));
+
 	}
-	
-	
+
 	public static void ejemploDesSerializar() {
 		personajes = SerializacionUtils.desSerializarListaObjetos("personajes.dat");
-		
+
 	}
-	
+
 	public static void mostrarPersonajes() {
 		personajes.forEach(e -> System.out.println(e));
 	}
-	
+
 	public static void probarConexion() {
 		con = null;
 		try {
@@ -73,7 +67,7 @@ public class App {
 			System.out.println("Fallo en la conexión");
 		}
 	}
-	
+
 	public static void poblarBbdd() {
 		Statement st;
 		String sql = "";
@@ -82,45 +76,55 @@ public class App {
 			con = DriverManager.getConnection(URI, USER, PASSWORD);
 			st = con.createStatement();
 			
-			for (Personaje personaje : personajes) {					// Recorreme la lista
-				sql = "INSERT INTO personaje(id,name) VALUES('" + 
-						personaje.getId() + "' ,'" + 
-						personaje.getName() + 
-					"');";
+			st.executeUpdate("DELETE FROM personaje");	// borra todos los datos de la tabla SOLO PRUEBAS
+
+			for (Personaje personaje : personajes) { // Recorreme la lista
+				personaje.setActor(personaje.getActor().replace("'", "''"));
+				sql = "INSERT INTO personaje("
+						+ "id, name, species, gender, house, dateOfBirth, yearOfBirth, wizard, ancestry,"
+						+ "eyeColour, hairColour, patronus, hogwartsStudent, hogwartsStaff, actor, alive, image"
+						+ ") VALUES('" + personaje.getId() + "','" + personaje.getName() + "','"
+						+ personaje.getSpecies() + "','" + personaje.getGender() + "','" + personaje.getHouse() + "',"
+						+ ((personaje.getDateOfBirthLD() != null) ? "'" + personaje.getDateOfBirthLD() + "'" : "NULL")
+						+ "," + ((personaje.getYearOfBirth() != null) ? "'" + personaje.getYearOfBirth() + "'" : "NULL")
+						+ ",'" + ((personaje.getWizard()) ? 1 : 0) + "','" + personaje.getAncestry() + "','"
+						+ personaje.getEyeColour() + "','" + personaje.getHairColour() + "','" + personaje.getPatronus()
+						+ "','" + ((personaje.getHogwartsStudent()) ? 1 : 0) + "','"
+						+ ((personaje.getHogwartsStaff()) ? 1 : 0) + "','" + personaje.getActor() + "','"
+						+ ((personaje.getAlive()) ? 1 : 0) + "','" + personaje.getImage() + "');";
 				
-				System.out.println(sql);
+				System.out.println(sql); // En pruebas luego la comentamos
 				st.executeUpdate(sql);
+
 			}
-			
+
 			st.close();
 			con.close();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Fallo en la conexión");
 		}
 	}
-	
-    public static void main( String[] args ){
-    	
-    	//Proceso de Serialización
+
+	public static void main(String[] args) {
+
+		// Proceso de Serialización
 //    	obtenerDatosApi();
 //    	rellenarFechaNacLD();
 //    	ejemploSerializar();
-    	
-    	// Proceso de DesSerializar
+
+		// Proceso de DesSerializar
 //    	ejemploDesSerializar();
 //    	rellenarFechaNacLD();
 //    	mostrarPersonajes();
-    	
-    	// Proceso de cargga de BBDD
-    	obtenerDatosApi();
-    	rellenarFechaNacLD();
-    	poblarBbdd();
-    	
+
+		// Proceso de cargga de BBDD
+		obtenerDatosApi();
+		rellenarFechaNacLD();
+		poblarBbdd();
+
 //    	probarConexion();
-    
-           
-       
-    }
+
+	}
 }
