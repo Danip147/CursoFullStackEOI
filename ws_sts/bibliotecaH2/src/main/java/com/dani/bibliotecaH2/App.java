@@ -12,8 +12,8 @@ import org.hibernate.cfg.Configuration;
 import com.dani.bibliotecaH2.entidades.Autores;
 import com.dani.bibliotecaH2.entidades.Libros;
 
-public class App 
-{
+public class App {
+	
 	static SessionFactory sessionFactory;
 	static Session session;
 		
@@ -83,8 +83,8 @@ public class App
 		}
 	}
 	
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ){
+    	
     	java.util.logging.Logger.getLogger("org.hibernate").setLevel(java.util.logging.Level.SEVERE);
     	openSession();
     	//mostrarLibros();
