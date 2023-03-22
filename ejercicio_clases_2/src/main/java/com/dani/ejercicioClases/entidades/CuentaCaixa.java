@@ -45,8 +45,8 @@ public final class CuentaCaixa extends Cuenta{				// final cuando no quieres que
 
 	@Override
 	public String toString() {
-		return "CuentaCaixa [nivelCatalan=" + nivelCatalan + ", getCif()=" + getCif() + ", getNombre()=" + getNombre()
-				+ ", getFechaNac()=" + getFechaNac() + ", getPais()=" + getPais() + ", getSaldo()=" + getSaldo() + "]";
+		return "CuentaCaixa --- CIF:" + getCif() + ", Nombre: " + getNombre() + ", nivelCatalan: " + nivelCatalan +
+				 ", Fecha de nacimiento: " + getFechaNac() + ", País: " + getPais() + ", Saldo: " + getSaldo() + " €";
 	}
 
 

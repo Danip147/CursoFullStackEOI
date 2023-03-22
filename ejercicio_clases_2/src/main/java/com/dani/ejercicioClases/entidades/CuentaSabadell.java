@@ -30,9 +30,8 @@ public final class CuentaSabadell extends Cuenta {
 
 	@Override
 	public String toString() {
-		return "CuentaSabadell [nivelCatalan=" + nivelCatalan + ", getCif()=" + getCif() + ", getNombre()="
-				+ getNombre() + ", getFechaNac()=" + getFechaNac() + ", getPais()=" + getPais() + ", getSaldo()="
-				+ getSaldo() + "]";
+		return "CuentaSabadell --- CIF:" + getCif() + ", Nombre: " + getNombre() + ", nivelCatalan: " + nivelCatalan +
+				 ", Fecha de nacimiento: " + getFechaNac() + ", País: " + getPais() + ", Saldo: " + getSaldo() + " €";
 	}
 
 	@Override

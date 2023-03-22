@@ -44,10 +44,13 @@ public class CuentaSantander extends Cuenta {
 
 	@Override
 	public String toString() {
-		return "CuentaSantander [residente=" + residente + ", getCif()=" + getCif() + ", getNombre()=" + getNombre()
-				+ ", getFechaNac()=" + getFechaNac() + ", getPais()=" + getPais() + ", getSaldo()=" + getSaldo() + "]";
+		return "CuentaSantander --- CIF:" + getCif() + ", Nombre: " + getNombre() + ", residente=" + residente +
+				 ", Fecha de nacimiento: " + getFechaNac() + ", País: " + getPais() + ", Saldo: " + getSaldo() + " €";
 	}
-
+	
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

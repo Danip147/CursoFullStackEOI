@@ -13,12 +13,13 @@ import java.util.OptionalDouble;
 import java.util.Random;
 import java.util.Scanner;
 
+import com.dani.ejercicioClases.entidades.Cuenta;
 import com.dani.ejercicioClases.entidades.CuentaCaixa;
 import com.dani.ejercicioClases.entidades.CuentaSabadell;
 import com.dani.ejercicioClases.entidades.CuentaSantander;
 import com.dani.ejercicioClases.enumerados.NivelCatalan;
 import com.dani.ejercicioClases.utilidades.FicherosUtils;
-//import com.dani.programacionFuncional.entidades.Usuario;
+
 
 
 public class App {
@@ -27,8 +28,6 @@ public class App {
 	private static List<CuentaSabadell> cuentasSabadell = new ArrayList<CuentaSabadell>();
 	private static List<CuentaSantander> cuentasSantander = new ArrayList<CuentaSantander>();
 	private static List<Object> todasLasCuentas = new ArrayList<>();
-	
-	
 	
 	
 	public static void anyadirCuentasCaixa() {
@@ -46,9 +45,6 @@ public class App {
     				NivelCatalan.Medio));
     	}
     	
-//    	cuentasCaixa.stream()
-//    		.filter(e -> e.getSaldo()< 15000)
-//    		.forEach(e -> System.out.println(e));
 	}
 	
 	public static void anyadirCuentasSabadell() {
@@ -66,9 +62,6 @@ public class App {
     				NivelCatalan.Medio));
     	}
     	
-//    	cuentasSabadell.stream()
-//		.filter(e -> e.getSaldo()< 15000)
-//		.forEach(e -> System.out.println(e));
 }
 		
 	public static void anyadirCuentasSantander() {
@@ -85,29 +78,10 @@ public class App {
 	    				Double.parseDouble(partes[4]), 
 	    				false));
 	    	}
-	    	
-//	    	cuentasSantander.stream()
-//	    		.forEach(e -> System.out.println(e));
-//	    	
-//	    	Double saldoTotalesSantander = cuentasSantander.stream()
-//	    		.mapToDouble(e->e.getSaldo())
-//	    		.sum();
-//	    	System.out.println("El saldo total de las cuentas santander es: " + saldoTotalesSantander + "€");
-//	    	
-//	    	long numeroCuentas = cuentasSantander.stream()
-//	    			.map(e-> e.getNombre())
-//	    			.count();
-//	    	System.out.println("El número totales de cuentas que hay es: " + numeroCuentas);
-//	    	
-//	    	OptionalDouble saldoMax = cuentasSantander.stream()
-//	    		.mapToDouble(e -> e.getSaldo())
-//	    		.max();
-//	    	
-//	    	System.out.println("El saldo máximo es : " + saldoMax.getAsDouble());
+	    
 	    	
 	    	
-	    		
-	    	
+	   	
 	}
 	
 	
@@ -123,52 +97,51 @@ public class App {
 	    todasLasCuentas.forEach(e -> System.out.println(e));
 	}
 	
-	
-	public static void borrarAlAzar() {
-		Random random = new Random();
-        int indiceABorrar = random.nextInt(todasLasCuentas.size());
-        todasLasCuentas.remove(indiceABorrar);
-        
-        todasLasCuentas.forEach(e -> System.out.println(e));
-        System.out.println(indiceABorrar);
-       
-        
-        
-	}
-	
-	
-	public static void buscarCif () {
-		Scanner sc = new Scanner(System.in);
-		String cifIntroUsu = sc.nextLine();
-		boolean tieneCuenta = cuentasCaixa.stream()
-			.anyMatch(e -> e.getCif().equals(cifIntroUsu));
-		
-		sc.close();
-		
-		if(tieneCuenta) {
-			System.out.println("Bienvenido " );
-		}else {
-			System.out.println("El usuario no tiene ninguna cuenta asociada a ninguna cuenta");
-		}
-		
-		
-	}
-		
 
+
+	public static void eliminarCuentaAleatoria() {
+	    if (todasLasCuentas.isEmpty()) {
+	        System.out.println("La lista está vacía, no se puede eliminar ninguna cuenta.");
+	    } else {
+	        Random random = new Random();
+	        int indice = random.nextInt(todasLasCuentas.size());
+	        Cuenta cuentaEliminada = (Cuenta) todasLasCuentas.get(indice);
+	        todasLasCuentas.remove(indice);
+	        System.out.println("La cuenta eliminada al azar es: " + cuentaEliminada);
+	    }
+	}
 	
+	
+	public static void sumarTotalSantander() {
+//		cuentasSantander.stream().forEach(e -> System.out.println(e));
+
+		Double saldoTotalesSantander = cuentasSantander.stream().mapToDouble(e -> e.getSaldo()).sum();
+		System.out.println("El saldo total de las cuentas santander es: " + saldoTotalesSantander + "€");
+
+		long numeroCuentas = cuentasSantander.stream().map(e -> e.getNombre()).count();
+		System.out.println("El número totales de cuentas que hay es: " + numeroCuentas);
+
+		OptionalDouble saldoMax = cuentasSantander.stream().mapToDouble(e -> e.getSaldo()).max();
+
+		System.out.println("El saldo máximo es : " + saldoMax.getAsDouble() + " €");
+	}
+	
+
     public static void main( String[] args ){
         
-    	
     	anyadirCuentasCaixa();
     	anyadirCuentasSabadell();
     	anyadirCuentasSantander();
     	juntarListas();
-    	System.out.println("Aqui borra una cuenta al azar:");
-    	//borrarAlAzar();
+    	System.out.println("");
+    	eliminarCuentaAleatoria();
+    	System.out.println("");
+    	System.out.println("12. Datos de la cuenta Santander: ");
+    	sumarTotalSantander();
     	
-    	System.out.println("Introduce cif: ");
     	
-    	buscarCif();
+    	
+    	
     	
     	
     	
