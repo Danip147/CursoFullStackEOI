@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dani.springboot.backend.mvc.models.entity.Cliente;
@@ -41,12 +43,14 @@ public class ClienteRestController {
 	}
 	
 	@PostMapping("/clientes") // Servicio web que inserta a un cliente
+	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente create(@RequestBody Cliente cliente) {
 		cliente.setCreateAt(LocalDate.now()); //Le pogno la fecha de creacion de hoy
 		return clienteService.save(cliente);
 	}
 	
 	@PutMapping("/clientes/{id}") // Actualiza un cliente 
+	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente update(@RequestBody Cliente cliente, @PathVariable Long id) {
 		Cliente clienteActualizar = clienteService.findById(id); // PRIMERO buscamos el elemento a cambiar
 		clienteActualizar.setNombre(cliente.getNombre());	//cambiamos los datos
